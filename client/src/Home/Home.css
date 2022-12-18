@@ -1,0 +1,67 @@
+body{
+    margin: 0%;
+    font-family: 'Circe-Regular', sans-serif;
+}
+
+header .header-top{
+    display: flex;
+    justify-content: space-around;
+}
+    .header-top .col_1{
+        margin-top: 1.5%;
+    }
+    .header-top .col_2{
+        margin-left: 30%;
+        margin-top: 1.7%;
+        font-size: small;
+    }
+    header .header-top ion-icon{
+        font-size: 20px;
+        margin-top: -1%;
+    }
+    header .header-top a{
+        text-decoration: none;
+        color: rgb(148, 148, 148);
+        font-size: 12px;
+    }
+hr{
+    margin-top: 1%;
+    margin-left: 13%;
+    width: 74%;
+}
+
+.title{
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+    font-size: 15px;
+}
+
+
+#img_logo{
+    width: 150px;
+}
+header .row{
+    display: flex;
+    justify-content: space-around;
+}
+.contacts{
+    display: flex;
+    flex-direction: row;
+}
+#phone_number , #div_social , #div_street{
+    text-align: center;
+    width: 250px;
+}
+
+#tmp{
+    font-size: 24px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+#telegram_icon , #facebook_icon , #instagram_icon , #youtube_icon{
+    font-size: 35px;
+    padding-left: 10px;
+}
+#pin{
+    font-size: 40px;
+}
