@@ -8,7 +8,7 @@ class Home extends React.Component{
         return (
             <header>
                 <div className='container'>
-                    <div className='row header-top '>
+                    <div className='header-top '>
                         <div className='col_1 header-top'>
                                 <span className="title"><b>Автомобілі з пробігом</b></span>
                         </div>
@@ -47,6 +47,18 @@ class Home extends React.Component{
 
                             </div>
                        </div>
+                       <div id='div_info'>
+                        <div id='div_info-numbs'>
+                            понад
+                            <br></br>
+                            <span>10 000</span>
+                        </div> 
+                            <span className='sp_2'>
+                                АВТО
+                                <br></br>
+                                ПРОДАНО
+                                </span>
+                        </div>
                     </div>
                 </div>
             </header>
