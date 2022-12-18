@@ -1,6 +1,6 @@
 import React from 'react';
 class Home extends React.Component{
-    
+
     constructor(props){
         super(props);
     }
@@ -8,8 +8,17 @@ class Home extends React.Component{
 
     render() {
         return (
-            <div>
-                <h1>Hello tmp!</h1>
+            <div id='main'>
+
+                <div id='header'>
+                    <h4 id='title'>Автомтобілі з пробігом </h4>
+                    <a id='translate'>RU |</a>
+                    <a id='translate'>Увійти</a>
+                    <hr></hr>
+                </div>
+
+                <div id='footer'></div>
+
             </div>
         );
     }
