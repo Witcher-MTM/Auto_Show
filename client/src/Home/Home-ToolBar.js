@@ -29,8 +29,27 @@ class Home_ToolBar extends React.Component{
                         </li>
                     </ul>
                 </div>
-                <div id='div-link-prodati'>
+                <div id='link-prodati'>
 
+                    <div className='div-link-prodati' id='div-komm-sell'>
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span><b>Комісійний продаж</b></span>
+                    </div>
+
+                    <div className='div-link-prodati' id='div-car-buyback'>
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span><b>Викуп автомобіля</b></span>
+                    </div>
+
+                    <div className='div-link-prodati' id='div-mark-online'>
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span><b>Оцінка вартості <spec>online</spec></b></span>
+                    </div>
+
+                    <div className='div-link-prodati' id='div-car-swap'>
+                    <ion-icon name="people-outline"></ion-icon>
+                    <span><b>Обмін автомобіля</b></span>
+                    </div>
                 </div>
             </section>
         );
