@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.css';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js';
-class Home extends React.Component{
+class Home_Header extends React.Component{
 
     render() {
         return (
@@ -26,7 +26,7 @@ class Home extends React.Component{
                         </div>
                        <div className='contacts'>
                             <div id='phone_number'>
-                            <ion-icon id='tmp' name="call-sharp"></ion-icon>
+                                <ion-icon id='telephone_icon' name="call-sharp"></ion-icon>
                                 <span>+38 (999) 999-99-99</span>
                                 <br></br>
                                 <a href='tel+38'>Замовити дзвінок</a>
@@ -62,9 +62,8 @@ class Home extends React.Component{
                     </div>
                 </div>
             </header>
-            
         );
     }
 }
 
-export default Home;
+export default Home_Header;
