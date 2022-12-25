@@ -73,6 +73,7 @@
     border-radius: 7px;
     max-width: 270px;
     margin-bottom: 24px;
+   text-align: center;
 }
 .car_image img{
     width: -webkit-fill-available;
@@ -80,9 +81,9 @@
 .car_info{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    column-gap: 25%;
+    column-gap: 7%;
 }
-h3{
+#main_content h3{
     width: 150px;
 }
 .car_year{
@@ -91,14 +92,41 @@ h3{
 .car_probeg{
     margin-left: 30px;
 }
-h4{
-    width: 150px;
+.card span{
+    height: 30px;
     font-size: 16px;
-    color: #404040;
     font-weight: bold;
+}
+.car_price{
+    padding-top: 3%;
+}
+.car_price span{
+    font-size: 20px!important;
+}
+.car_price .eng{
+    color: rgb(23, 177, 23)!important;
 }
 .car_prop{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     
+}
+.details_btn{
+    background: #E40C25;
+    border-color: #E40C25;
+    color: #FFFFFF;
+    width: 100%;
+    text-align: center;
+    border-radius: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.details_btn:hover{
+    background-color: #E40C2599;
+    border-color: #E40C2599;
+}
+#cars{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 5%;
 }
