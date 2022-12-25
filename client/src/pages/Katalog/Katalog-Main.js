@@ -32,7 +32,7 @@ var cars = [
         priceENG:16791
     },
     {
-        Name:"Ford Kuga",
+        Name:"Ford Kuga2",
         Year:2018,
         Probeg:105,
         Kuzov:"Кросовер",
@@ -45,7 +45,7 @@ var cars = [
         priceENG:16791
     },
     {
-        Name:"Ford Kuga",
+        Name:"Ford Kuga3",
         Year:2018,
         Probeg:105,
         Kuzov:"Кросовер",
@@ -58,7 +58,7 @@ var cars = [
         priceENG:16791
     },
     {
-        Name:"Ford Kuga",
+        Name:"Ford Kuga4",
         Year:2018,
         Probeg:105,
         Kuzov:"Кросовер",
@@ -267,16 +267,42 @@ class Katalog_Main extends React.Component{
         document.getElementById('view_card').className = document.getElementById('view_card').className === 'active'?' ':'active';
         console.log("swap");
     }   
+    SortByPrice(){
+        var cars_price_ua = document.getElementsByClassName('ua');
+        var startPrice = document.getElementById('startPrice');
+        var endPrice = document.getElementById('endPrice');
+        cars_price_ua.forEach(carPrice => {
+            if(parseInt(startPrice.value) !=0 && parseInt(endPrice.value) !=0 && startPrice.value!="" && endPrice.value!=""){
+                if(parseInt(carPrice.innerText) > parseInt(startPrice.value) && parseInt(carPrice.innerText) < parseInt(endPrice.value)){
+                    carPrice.parentElement.parentElement.style.display = "block";
+                }
+                else{
+                    carPrice.parentElement.parentElement.style.display = "none";
+                }
+            }
+            else{
+                carPrice.parentElement.parentElement.style.display = "block";
+            }
+        });
+    }
+    ShowFiltersBtn(){
+       var btn = document.getElementById('activateFilters');
+       btn.style.display = 'block';
+    }
+    HideFiltersBtn(e){
+        e.target.parentElement.style.display = 'none';
+    }
     render(){
         return(
             <>
-                <div id='side_bar'>
+                <div onChange={this.ShowFiltersBtn} id='side_bar'>
+                <div id='activateFilters'><a onClick={this.HideFiltersBtn} href='#'>активувати фільтри</a></div>
                 <h2 className='filter-title'>ПІДБІР АВТОМОБІЛЯ</h2>
                 <div id='price'>
                     <h3>ЦІНА, ГРН</h3>
-                    <input type={"text"}></input>
+                    <input min={0} onChange={this.SortByPrice} id='startPrice' type={"number"} defaultValue='0'></input>
                     <span> - </span>
-                    <input type={"text"}></input>
+                    <input min={0} onChange={this.SortByPrice} id='endPrice' type={"number"} defaultValue='50000000'></input>
                     <div id='slider'></div>
                         <input type={'checkbox'} id='actions_only'></input>
                         <label htmlFor='actions_only'>Показувати тільки спецпропозиції</label>
@@ -443,9 +469,9 @@ class Katalog_Main extends React.Component{
                                         <span>{car.KPP}</span>
                                     </div>
                                     <div className='car_price'>
-                                        <span className='ua'>UA:{car.priceUA}</span>
+                                        <span>UA:</span><span className='ua'>{car.priceUA}</span>
                                         <br></br>
-                                        <span className='eng'>$ {car.priceENG}</span>
+                                        <span>$</span><span className='eng'>{car.priceENG}</span>
                                         <button className='details_btn'>ДЕТАЛІ</button>
                                     </div>
                                 </div>  
