@@ -1,13 +1,14 @@
-import Home_Header from './Home/Home-Header.js';
-import Home_ToolBar from './Home/Home-ToolBar.js';
-
+import Katalog_Header from './pages/Katalog/Katalog-Header.js';
+import Katalog_ToolBar from './pages/Katalog/Katalog-ToolBar';
+import KatalogNav from './pages/Katalog/KatalogNav.js';
 import './App.css';
 
 function App() {
   return (
     <>
-      <Home_Header />
-      <Home_ToolBar />
+      <Katalog_Header />
+      <Katalog_ToolBar />
+      <KatalogNav />
     </>
   );
 }

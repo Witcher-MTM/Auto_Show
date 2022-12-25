@@ -1,8 +1,8 @@
 import React from 'react';
-import './Home.css';
+import '../../css/Home.css';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js';
-class Home_ToolBar extends React.Component{
+class Katalog_ToolBar extends React.Component{
     ShowSaleDiv(){
         var seller_menu = document.getElementById('seller');
         var poslyg_menu = document.getElementById('poslyg');
@@ -133,4 +133,4 @@ class Home_ToolBar extends React.Component{
     }
 }
 
-export default Home_ToolBar;
+export default Katalog_ToolBar;

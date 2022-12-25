@@ -1,8 +1,8 @@
 import React from 'react';
-import './Home.css';
+import '../../css/Home.css';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js';
-class Home_Header extends React.Component{
+class Katalog_Header extends React.Component{
 
     render() {
         return (
@@ -66,4 +66,4 @@ class Home_Header extends React.Component{
     }
 }
 
-export default Home_Header;
+export default Katalog_Header;
