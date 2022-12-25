@@ -1,0 +1,68 @@
+#main_content{
+    display: inline-block;
+    margin-top: 1%;
+    margin-left: 3%;
+    width: 60%;
+}
+#content_settings span{
+    color: #3c3c3c;
+    font-size: 14px;
+    padding-right: 10px;
+}
+#content_settings select{
+    width: 100%!important;
+    color: #169CCD!important;
+    border-bottom: 2px dashed #169CCD!important;
+    border: none!important;
+    border-radius: 0;
+    font-size: 14px;
+    font-family: 'Circe-Regular', sans-serif;
+    text-align: left!important;
+    padding: 0px;
+    outline: none;
+    background: none;
+    background-position: 100% 50%;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-appearance: none;
+    border-color: #8e8e8e;
+    -moz-appearance: none;
+    appearance: none!important;
+    max-width: 146px!important;
+    float: none;
+    text-transform: none;
+}
+.carret-catalog-icon:after {
+    content: url(../../public/resources/img/carret.png);
+    width: 12px;
+    height: 5px;
+    vertical-align: text-top;
+    margin-left: 6px;
+}
+#view_card{
+    float: right;
+    display: inline-block;
+    width: 28px;
+    height: 26px;
+    background: url(../../public/resources/img/list.png) 28px 0px;
+}
+#view_card.active{
+    width: 28px;
+    display: inline-block;
+    height: 26px;
+    background: url(../../public/resources/img/list.png) 0px 0px;
+}
+#view_list{
+    margin-left: 1.5%;
+    display: inline-block;
+    float: right;
+    width: 28px;
+    height: 26px;
+    background: url(../../public/resources/img/list.png) 28px 26px;
+}
+#view_list.active{
+    width: 28px;
+    display: inline-block;
+    height: 26px;
+    background: url(../../public/resources/img/list.png) 0px 27px;
+}
