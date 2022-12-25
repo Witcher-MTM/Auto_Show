@@ -66,3 +66,39 @@
     height: 26px;
     background: url(../../public/resources/img/list.png) 0px 27px;
 }
+.card{
+    border: none;
+    border-color: transparent;
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
+    border-radius: 7px;
+    max-width: 270px;
+    margin-bottom: 24px;
+}
+.car_image img{
+    width: -webkit-fill-available;
+}
+.car_info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 25%;
+}
+h3{
+    width: 150px;
+}
+.car_year{
+    color: rgb(192, 19, 19);
+}
+.car_probeg{
+    margin-left: 30px;
+}
+h4{
+    width: 150px;
+    font-size: 16px;
+    color: #404040;
+    font-weight: bold;
+}
+.car_prop{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    
+}

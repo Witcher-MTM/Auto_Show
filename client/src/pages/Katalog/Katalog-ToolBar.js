@@ -2,6 +2,7 @@ import React from 'react';
 import '../../css/Home.css';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js';
+
 class Katalog_ToolBar extends React.Component{
     ShowSaleDiv(){
         var seller_menu = document.getElementById('seller');
