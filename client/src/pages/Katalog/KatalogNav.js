@@ -5,6 +5,11 @@ import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js';
 var isMarks = false;
 var isKuzovs = false;
+var isTypeOfFuel = false;
+var isTypeOfPrivod = false;
+var isTypeOfKPP = false;
+var isCountOfSeats = false;
+var isTyrbo = false;
 class KatalogNav extends React.Component{
  
     InitULMarks(){
@@ -64,7 +69,131 @@ class KatalogNav extends React.Component{
         isKuzovs = true;
     }
     InitULTypeOfFuel(){
-        
+        if(!isTypeOfFuel){
+            var list = ['Бензин','Дизель','Гібрид','Газ','Електро',
+            'Plug-in Гібрид','Газ/Бензин'];
+
+            var ul = document.createElement('ul');
+            list.forEach(element => {
+                console.log(element);
+                var li = document.createElement('li');
+                var input = document.createElement('input');
+                var label = document.createElement('label');
+                input.type = "checkbox";
+                input.id = element;
+                label.innerText = element;
+                li.appendChild(input);
+                li.appendChild(label);
+                ul.appendChild(li);
+            });
+
+            document.getElementById('type_of_fuel_list').appendChild(ul);
+        }
+        else{
+            document.getElementById('type_of_fuel_list').style.display = document.getElementById('type_of_fuel_list').style.display === 'block'?'none' : 'block';
+        }
+        isTypeOfFuel = true;
+    }
+    InitULTypeOfPrivod(){
+        if(!isTypeOfPrivod){
+            var list = ['Передній','Задній','Повний','AWD'];
+
+            var ul = document.createElement('ul');
+            list.forEach(element => {
+                console.log(element);
+                var li = document.createElement('li');
+                var input = document.createElement('input');
+                var label = document.createElement('label');
+                input.type = "checkbox";
+                input.id = element;
+                label.innerText = element;
+                li.appendChild(input);
+                li.appendChild(label);
+                ul.appendChild(li);
+            });
+
+            document.getElementById('type_of_privod_list').appendChild(ul);
+        }
+        else{
+            document.getElementById('type_of_privod_list').style.display = document.getElementById('type_of_privod_list').style.display === 'block'?'none' : 'block';
+
+        }
+        isTypeOfPrivod = true;
+    }
+    InitULTypeOfKpp(){
+        if(!isTypeOfKPP){
+            var list = ['Автомат','Механічна','Варіатор','Робот','Редуктор','HV-Гібридна'];
+
+            var ul = document.createElement('ul');
+            list.forEach(element => {
+                console.log(element);
+                var li = document.createElement('li');
+                var input = document.createElement('input');
+                var label = document.createElement('label');
+                input.type = "checkbox";
+                input.id = element;
+                label.innerText = element;
+                li.appendChild(input);
+                li.appendChild(label);
+                ul.appendChild(li);
+            });
+
+            document.getElementById('type_of_kpp_list').appendChild(ul);
+        }
+        else{
+            document.getElementById('type_of_kpp_list').style.display = document.getElementById('type_of_kpp_list').style.display === 'block'?'none' : 'block';
+
+        }
+        isTypeOfKPP = true;
+    }
+    InitULCountOfSeats(){
+        if(!isCountOfSeats){
+            var list = ['2','3','4','5','6','7','8','9','15','16','17','18','19','20'];
+
+            var ul = document.createElement('ul');
+            list.forEach(element => {
+                console.log(element);
+                var li = document.createElement('li');
+                var input = document.createElement('input');
+                var label = document.createElement('label');
+                input.type = "checkbox";
+                input.id = element;
+                label.innerText = element;
+                li.appendChild(input);
+                li.appendChild(label);
+                ul.appendChild(li);
+            });
+
+            document.getElementById('count_of_seats_list').appendChild(ul);
+        }
+        else{
+            document.getElementById('count_of_seats_list').style.display = document.getElementById('count_of_seats_list').style.display === 'block'?'none' : 'block';
+
+        }
+        isCountOfSeats = true;
+    }
+    InitULTyrbo(){
+        if(!isTyrbo){
+            var list = ['Так','Ні'];
+            var ul = document.createElement('ul');
+            list.forEach(element => {
+                console.log(element);
+                var li = document.createElement('li');
+                var input = document.createElement('input');
+                var label = document.createElement('label');
+                input.type = "checkbox";
+                input.id = element;
+                label.innerText = element;
+                li.appendChild(input);
+                li.appendChild(label);
+                ul.appendChild(li);
+            });
+            document.getElementById('tyrbo_list').appendChild(ul);
+        }
+        else{
+            document.getElementById('tyrbo_list').style.display = document.getElementById('tyrbo_list').style.display === 'block'?'none' : 'block';
+        }
+        isTyrbo = true;
     }
     render(){
     return(
@@ -165,6 +294,41 @@ class KatalogNav extends React.Component{
                 <div id='slider'></div>
             </div>
             <div id='type_of_fuel_list' style={{display:'block'}}>
+              
+            </div>
+
+            <div id='type_of_privod'>    
+                <button onClick= {this.InitULTypeOfPrivod}><h3>ТИП ПРИВОДУ</h3></button>
+                <ion-icon id='sign' name="chevron-down-outline"></ion-icon>
+                <div id='slider'></div>
+            </div>
+            <div id='type_of_privod_list' style={{display:'block'}}>
+              
+            </div>
+
+            <div id='type_of_kpp'>    
+                <button onClick= {this.InitULTypeOfKpp}><h3>ТИП КПП</h3></button>
+                <ion-icon id='sign' name="chevron-down-outline"></ion-icon>
+                <div id='slider'></div>
+            </div>
+            <div id='type_of_kpp_list' style={{display:'block'}}>
+              
+            </div>
+
+            <div id='count_of_seats'>    
+                <button onClick= {this.InitULCountOfSeats}><h3>КІЛЬКІСТЬ МІСЦЬ, ШТ</h3></button>
+                <ion-icon id='sign' name="chevron-down-outline"></ion-icon>
+                <div id='slider'></div>
+            </div>
+            <div id='count_of_seats_list' style={{display:'block'}}>
+              
+            </div>
+            <div id='tyrbo'>    
+                <button onClick= {this.InitULTyrbo}><h3>ТУРБОНАДДУВ</h3></button>
+                <ion-icon id='sign' name="chevron-down-outline"></ion-icon>
+                <div id='slider'></div>
+            </div>
+            <div id='tyrbo_list' style={{display:'block'}}>
               
             </div>
         </div>

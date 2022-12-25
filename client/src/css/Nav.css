@@ -114,12 +114,14 @@ select{
     width: 100%;
     -moz-appearance: textfield;
 }
-#marka,#type_korpus{
-    margin-top: -10%;
+#marka, #type_korpus, #type_of_fuel, #type_of_privod,#type_of_kpp,#count_of_seats{
+   
 }   
 button{
+    float: left;
     width: 200px;
-    padding-right: 25%;
+    text-align: left;
+    height: 45px;
     border: 0px;
     background-color: rgba(255, 0, 0, 0);
     margin-bottom: -40px;
