@@ -3,11 +3,69 @@ import "../../css/Home.css";
 import "../../css/Nav.css";
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js';
+var isMarks = false;
+var isKuzovs = false;
 class KatalogNav extends React.Component{
  
- 
- 
- 
+    InitULMarks(){
+        if(!isMarks){
+            var list = ['Audi','BMW','Chery','Citroen','Fiat',
+            'Ford','Haval','Hyundai','INFINITI','JAGUAR',
+            'Kia','LAND ROVER','Lexus','Mazda','Mercedes-Benz',
+            'MG','Nissan','Opel','Peugeot','Porsche','Ravon',
+            'Renault','Seat','Skoda','SsangYong','Subaru','Suzuki',
+            'Tesla','Toyota','Triumph','Volkswagen','Volvo','Yamaha'];
+            var ul = document.createElement('ul');
+            list.forEach(element => {
+                console.log(element);
+                var li = document.createElement('li');
+                var input = document.createElement('input');
+                var label = document.createElement('label');
+                input.type = "checkbox";
+                input.id = element;
+                label.innerText = element;
+                li.appendChild(input);
+                li.appendChild(label);
+                ul.appendChild(li);
+            });
+            document.getElementById('marks_list').appendChild(ul);
+        }
+        else{
+            console.log("show/hide");
+            document.getElementById('marks_list').style.display = document.getElementById('marks_list').style.display === 'block' ? 'none' : 'block';
+        }
+        isMarks = true;
+    }
+    InitULTypeKuzova(){
+        if(!isKuzovs){
+            var list = ['Хетчбек','Седан','Універсал','Кросовер','Купе',
+            'Кабріолет','Позашляховик','Ліфтбек','Пікап','Мінівен',
+            'Фургон'];
+
+            var ul = document.createElement('ul');
+            list.forEach(element => {
+                console.log(element);
+                var li = document.createElement('li');
+                var input = document.createElement('input');
+                var label = document.createElement('label');
+                input.type = "checkbox";
+                input.id = element;
+                label.innerText = element;
+                li.appendChild(input);
+                li.appendChild(label);
+                ul.appendChild(li);
+            });
+
+            document.getElementById('type_korpus_list').appendChild(ul);
+        }
+        else{
+            document.getElementById('type_korpus_list').style.display = document.getElementById('type_korpus_list').style.display === 'block'?'none' : 'block';
+        }
+        isKuzovs = true;
+    }
+    InitULTypeOfFuel(){
+        
+    }
     render(){
     return(
         <div id='side_bar'>
@@ -18,19 +76,17 @@ class KatalogNav extends React.Component{
                 <span> - </span>
                 <input type={"text"}></input>
                 <div id='slider'></div>
-                <p className='check'>
                     <input type={'checkbox'} id='actions_only'></input>
-                    <label for='actions_only'>Показувати тільки спецпропозиції</label>
+                    <label htmlFor='actions_only'>Показувати тільки спецпропозиції</label>
                     <br></br>
                     <input type={'checkbox'} id='nds_only'></input>
-                    <label for='nds_only'>ПДВ включено</label>
+                    <label htmlFor='nds_only'>ПДВ включено</label>
                     <div id='slider'></div>
-                </p>
             </div>
            
             <div id='year'>
             <h3>РІК</h3>
-                <p> 
+               
                     <select>
                     <option selected disabled value={''} hidden='hidden'></option>
                         <option value="2022">2022</option>
@@ -76,7 +132,7 @@ class KatalogNav extends React.Component{
                         <option value="2005">2005</option>
                         <option value="2004">2004</option>
                     </select>
-                </p>
+               
                 <div id='slider'></div>
             </div>
 
@@ -86,8 +142,30 @@ class KatalogNav extends React.Component{
             <input type="number" placeholder="Пробіг до"></input>
             <div id='slider'></div>
             </div>
-            <div id='marka'>
-                <h3>МАРКА</h3>
+            <div id='marka'>    
+                <button onClick= {this.InitULMarks}><h3>МАРКА</h3></button>
+                <ion-icon id='sign' name="chevron-down-outline"></ion-icon>
+                <div id='slider'></div>
+            </div>
+            <div id='marks_list' style={{display:'block'}}>
+              
+            </div>
+            <div id='type_korpus'>    
+                <button onClick= {this.InitULTypeKuzova}><h3>ТИП КУЗОВА</h3></button>
+                <ion-icon id='sign' name="chevron-down-outline"></ion-icon>
+                <div id='slider'></div>
+            </div>
+            <div id='type_korpus_list' style={{display:'block'}}>
+              
+            </div>
+
+            <div id='type_of_fuel'>    
+                <button onClick= {this.InitULTypeOfFuel}><h3>ТИП ПАЛИВА</h3></button>
+                <ion-icon id='sign' name="chevron-down-outline"></ion-icon>
+                <div id='slider'></div>
+            </div>
+            <div id='type_of_fuel_list' style={{display:'block'}}>
+              
             </div>
         </div>
 

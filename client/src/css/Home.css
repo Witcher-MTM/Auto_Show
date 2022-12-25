@@ -158,9 +158,6 @@ header .row{
     .div-link-prodati:hover{
         background: rgba(255, 255, 255, 0.2);
     }
-    #navigation .div-link-prodati ion-icon{
-        font-size: 30px;
-    }
     .div-link-prodati .def{
         user-select: none;
         line-height: 22px;

@@ -114,6 +114,37 @@ select{
     width: 100%;
     -moz-appearance: textfield;
 }
-#marka{
+#marka,#type_korpus{
     margin-top: -10%;
+}   
+button{
+    width: 200px;
+    padding-right: 25%;
+    border: 0px;
+    background-color: rgba(255, 0, 0, 0);
+    margin-bottom: -40px;
+}
+#sign{
+    
+    font-size: 25px;
+    color: #666f74;
+    margin-bottom: -6px;
+}
+ul{
+    list-style: none;
+    padding-inline-start: 0px;
+}
+ul li label{
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+ul li{
+    position: relative;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 0;
+    font-size: 14px;
 }
