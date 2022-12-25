@@ -2,6 +2,7 @@ import React from 'react';
 import '../../css/Home.css';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js';
+import { BrowserRouter as Link} from "react-router-dom";
 class Katalog_Header extends React.Component{
 
     render() {
@@ -16,7 +17,9 @@ class Katalog_Header extends React.Component{
                                 <a href='#' id='translate'><b>RU</b></a>
                                 <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                                 <ion-icon className='login-person-outline' name="person-outline"></ion-icon>
-                                <a href='#' id='Login'>&nbsp;<b>Увійти</b></a>
+                                <Link to='/auth' draggable='false'>
+                                    Увійти
+                                </Link>
                         </div>
                     </div>
                     <hr></hr>

@@ -1,15 +1,13 @@
-import Katalog_Header from './pages/Katalog/Katalog-Header.js';
-import Katalog_ToolBar from './pages/Katalog/Katalog-ToolBar';
 import KatalogContent from './pages/Katalog/Katalog-Main.js';
+import Auth from './pages/Katalog/Auth.js';
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {createBrowserHistory} from "history"
 import './App.css';
 
 function App() {
+  const history = createBrowserHistory({ forceRefresh: true });
   return (
-    <>
-      <Katalog_Header />
-      <Katalog_ToolBar />
-      <KatalogContent />
-    </>
+    <KatalogContent />
   );
 }
 

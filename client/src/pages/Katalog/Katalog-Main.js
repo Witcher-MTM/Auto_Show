@@ -4,6 +4,8 @@ import "../../css/Home.css";
 import "../../css/Nav.css";
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js';
 import 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js';
+import Katalog_Header from './Katalog-Header.js';
+import Katalog_ToolBar from './Katalog-ToolBar.js'
 var cars = [
     {
         Name:"Subaru Outback",
@@ -474,6 +476,8 @@ class Katalog_Main extends React.Component{
     render(){
         return(
             <>
+            <Katalog_Header />
+            <Katalog_ToolBar />
                 <div onChange={this.ShowFiltersBtn} id='side_bar'>
                 <div id='activateFilters'><a onClick={this.Sort} href='#'>активувати фільтри</a></div>
                 <h2 className='filter-title'>ПІДБІР АВТОМОБІЛЯ</h2>
