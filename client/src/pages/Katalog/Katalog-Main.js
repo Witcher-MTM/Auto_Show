@@ -20,7 +20,7 @@ var cars = [
     },
     {
         Name:"Ford Kuga",
-        Year:2018,
+        Year:2013,
         Probeg:105,
         Kuzov:"Кросовер",
         Privod:"Передній",
@@ -46,7 +46,7 @@ var cars = [
     },
     {
         Name:"Ford Kuga3",
-        Year:2018,
+        Year:2019,
         Probeg:105,
         Kuzov:"Кросовер",
         Privod:"Передній",
@@ -59,7 +59,7 @@ var cars = [
     },
     {
         Name:"Ford Kuga4",
-        Year:2018,
+        Year:2005,
         Probeg:105,
         Kuzov:"Кросовер",
         Privod:"Передній",
@@ -95,6 +95,7 @@ class Katalog_Main extends React.Component{
                 var label = document.createElement('label');
                 input.type = "checkbox";
                 input.id = element;
+                input.className = 'marks';
                 label.innerText = element;
                 li.appendChild(input);
                 li.appendChild(label);
@@ -122,6 +123,7 @@ class Katalog_Main extends React.Component{
                 var label = document.createElement('label');
                 input.type = "checkbox";
                 input.id = element;
+                input.className = 'typeKuzova';
                 label.innerText = element;
                 li.appendChild(input);
                 li.appendChild(label);
@@ -148,6 +150,7 @@ class Katalog_Main extends React.Component{
                 var label = document.createElement('label');
                 input.type = "checkbox";
                 input.id = element;
+                input.className = 'typeFuel';
                 label.innerText = element;
                 li.appendChild(input);
                 li.appendChild(label);
@@ -173,6 +176,7 @@ class Katalog_Main extends React.Component{
                 var label = document.createElement('label');
                 input.type = "checkbox";
                 input.id = element;
+                input.className = 'typePrivod';
                 label.innerText = element;
                 li.appendChild(input);
                 li.appendChild(label);
@@ -199,6 +203,7 @@ class Katalog_Main extends React.Component{
                 var label = document.createElement('label');
                 input.type = "checkbox";
                 input.id = element;
+                input.className = 'typeKpp';
                 label.innerText = element;
                 li.appendChild(input);
                 li.appendChild(label);
@@ -225,6 +230,7 @@ class Katalog_Main extends React.Component{
                 var label = document.createElement('label');
                 input.type = "checkbox";
                 input.id = element;
+                input.className='countSeats';
                 label.innerText = element;
                 li.appendChild(input);
                 li.appendChild(label);
@@ -250,6 +256,7 @@ class Katalog_Main extends React.Component{
                 var label = document.createElement('label');
                 input.type = "checkbox";
                 input.id = element;
+                input.className = 'Tyrbo';
                 label.innerText = element;
                 li.appendChild(input);
                 li.appendChild(label);
@@ -267,42 +274,80 @@ class Katalog_Main extends React.Component{
         document.getElementById('view_card').className = document.getElementById('view_card').className === 'active'?' ':'active';
         console.log("swap");
     }   
-    SortByPrice(){
-        var cars_price_ua = document.getElementsByClassName('ua');
+    Sort(e){
+        e.target.parentElement.style.display = 'none';
+
         var startPrice = document.getElementById('startPrice');
         var endPrice = document.getElementById('endPrice');
+
+        var startSelect = document.getElementById('startSelect');
+        var endSelect = document.getElementById('endSelect');
+        var startProbeg = document.getElementById('startProbeg');
+        var endProbeg = document.getElementById('endProbeg');
+        var marks = document.getElementsByClassName('marks');
+        var typesKuzova = document.getElementsByClassName('typeKuzova');
+        var typesFuel = document.getElementsByClassName('typeFuel');
+        var typesPrivod = document.getElementsByClassName('typePrivod');
+        var typesKpp = document.getElementsByClassName('typeKpp');
+        var countSeats = document.getElementsByClassName('countSeats');
+        var Tyrbo = document.getElementsByClassName('Tyrbo');
+
+        var cars_price_ua = document.getElementsByClassName('ua');
         cars_price_ua.forEach(carPrice => {
-            if(parseInt(startPrice.value) !=0 && parseInt(endPrice.value) !=0 && startPrice.value!="" && endPrice.value!=""){
-                if(parseInt(carPrice.innerText) > parseInt(startPrice.value) && parseInt(carPrice.innerText) < parseInt(endPrice.value)){
-                    carPrice.parentElement.parentElement.style.display = "block";
+                console.log("Price:"+startPrice.value +" " + endPrice.value);
+                if(parseInt(endPrice.value) !=0 && startPrice.value!="" && endPrice.value!=""){
+                    if(parseInt(carPrice.innerText) >= parseInt(startPrice.value) && parseInt(carPrice.innerText) <= parseInt(endPrice.value)){
+                        carPrice.parentElement.parentElement.style.display = "block";
+                    }
+                    else{
+                        carPrice.parentElement.parentElement.style.display = "none";
+                    }
                 }
-                else{
-                    carPrice.parentElement.parentElement.style.display = "none";
+        });
+        var car_years = document.getElementsByClassName('car_year');
+        car_years.forEach(car_year => {
+            console.log("Year:"+startSelect.value+' '+endSelect.value);
+            if(car_year.parentElement.parentElement.style.display === 'block'){
+                if(parseInt(startSelect.value) !=0 && parseInt(endSelect.value) !=0 && startSelect.value!="" && endSelect.value!=""){
+                    if(parseInt(car_year.innerText) >= parseInt(startSelect.value) && parseInt(car_year.innerText) <= parseInt(endSelect.value)){
+                        car_year.parentElement.parentElement.style.display = "block";
+                    }
+                    else{
+                        car_year.parentElement.parentElement.style.display = "none";
+                    }
                 }
-            }
-            else{
-                carPrice.parentElement.parentElement.style.display = "block";
             }
         });
-    }
+        var car_probegs = document.getElementsByClassName('car_probeg_h5');
+        car_probegs.forEach(car_probeg => {
+            console.log("Probeg:" + startProbeg.value+' '+endProbeg.value);
+            if(car_probeg.parentElement.parentElement.style.display === 'block'){
+                if(parseInt(startProbeg.value) !=0 && parseInt(endProbeg.value) !=0 && startProbeg.value!="" && endProbeg.value!=""){
+                    if(parseInt(car_probeg.innerText) >= parseInt(startProbeg.value) && parseInt(car_probeg.innerText) <= parseInt(endProbeg.value)){
+                        car_probeg.parentElement.parentElement.style.display = "block";
+                    }
+                    else{
+                        car_probeg.parentElement.parentElement.style.display = "none";
+                    }
+                }
+            }
+        });
+    }                                                                                                                                                                                       
     ShowFiltersBtn(){
        var btn = document.getElementById('activateFilters');
        btn.style.display = 'block';
-    }
-    HideFiltersBtn(e){
-        e.target.parentElement.style.display = 'none';
     }
     render(){
         return(
             <>
                 <div onChange={this.ShowFiltersBtn} id='side_bar'>
-                <div id='activateFilters'><a onClick={this.HideFiltersBtn} href='#'>активувати фільтри</a></div>
+                <div id='activateFilters'><a onClick={this.Sort} href='#'>активувати фільтри</a></div>
                 <h2 className='filter-title'>ПІДБІР АВТОМОБІЛЯ</h2>
                 <div id='price'>
                     <h3>ЦІНА, ГРН</h3>
-                    <input min={0} onChange={this.SortByPrice} id='startPrice' type={"number"} defaultValue='0'></input>
+                    <input min={0} id='startPrice' type={"number"} defaultValue='0'></input>
                     <span> - </span>
-                    <input min={0} onChange={this.SortByPrice} id='endPrice' type={"number"} defaultValue='50000000'></input>
+                    <input min={0} id='endPrice' type={"number"} defaultValue='50000000'></input>
                     <div id='slider'></div>
                         <input type={'checkbox'} id='actions_only'></input>
                         <label htmlFor='actions_only'>Показувати тільки спецпропозиції</label>
@@ -315,7 +360,7 @@ class Katalog_Main extends React.Component{
                 <div id='year'>
                 <h3>РІК</h3>
                 
-                        <select>
+                        <select id='startSelect'>
                         <option selected disabled value={''} hidden='hidden'></option>
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
@@ -338,7 +383,7 @@ class Katalog_Main extends React.Component{
                             <option value="2004">2004</option>
                         </select>
 
-                        <select id='sel2'>
+                        <select id='endSelect'>
                         <option selected disabled value={''} hidden='hidden'></option>
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
@@ -366,8 +411,8 @@ class Katalog_Main extends React.Component{
 
                 <div id='collapse'>
                 <h3>ПРОБІГ, КМ</h3>
-                <input type="number" placeholder="Пробіг від"></input>
-                <input type="number" placeholder="Пробіг до"></input>
+                <input min={0} id='startProbeg' type="number" placeholder="Пробіг від"></input>
+                <input min={0} id='endProbeg' type="number" placeholder="Пробіг до"></input>
                 <div id='slider'></div>
                 </div>
                 <div id='marka'>    
@@ -460,7 +505,7 @@ class Katalog_Main extends React.Component{
                                         <h3 className='car_year'>{car.Year}</h3>
                                     </div>
                                     <div className='car_probeg'>
-                                        <h5>{car.Probeg} тис.км</h5>
+                                        <h5 className='car_probeg_h5'>{car.Probeg} тис.км</h5>
                                     </div>
                                     <div className='car_prop'>
                                         <span>{car.Kuzov}</span>
